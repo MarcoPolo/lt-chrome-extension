@@ -1,0 +1,26 @@
+{
+  "manifest_version": 2,
+
+  "name": "Light table inject",
+  "description": "The plugin will inject the Light Table connect script into any page",
+  "version": "0.0.1",
+  "author":"MarcoPolo",
+  //"github":"github.com/marcopolo/lt-chrome-extension",
+  "browser_action": {
+    "default_icon": "img/lt-logo.png",
+    "default_popup": "popup.html",
+    "default_title": "Connect current tab to LT"
+  },
+  "background": {
+    "scripts":["background.js"],
+    "persistent":true
+  },
+  "content_scripts":[{
+    "matches":["http://*/*", "https://*/*"],
+    "js":["contentscript.js"]
+  }],
+  "permissions": [
+    "activeTab",
+    "storage"
+  ]
+}
