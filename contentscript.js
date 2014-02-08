@@ -5,6 +5,8 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     script.type="text/javascript";
     script.src="http://localhost:"+port+"/socket.io/lighttable/ws.js";
     script.id="lt_ws";
-    document.body.appendChild(script);
+    setTimeout(function(){
+      document.body.appendChild(script);
+    }, 3e3)
   }
 });
